@@ -41,7 +41,7 @@
   </signal>
   <title>GTK Bookmark Editor</title>
   <type>GTK_WINDOW_TOPLEVEL</type>
-  <position>GTK_WIN_POS_NONE</position>
+  <position>GTK_WIN_POS_CENTER</position>
   <modal>False</modal>
   <default_width>640</default_width>
   <default_height>440</default_height>
@@ -81,6 +81,18 @@
 	  <widget>
 	    <class>GtkMenu</class>
 	    <name>file_menu</name>
+
+	    <widget>
+	      <class>GtkMenuItem</class>
+	      <name>new</name>
+	      <signal>
+		<name>activate</name>
+		<handler>on_new_activate</handler>
+		<last_modification_time>Wed, 31 May 2000 20:41:52 GMT</last_modification_time>
+	      </signal>
+	      <label>New</label>
+	      <right_justify>False</right_justify>
+	    </widget>
 
 	    <widget>
 	      <class>GtkMenuItem</class>
@@ -131,6 +143,246 @@
 	      </signal>
 	      <label>Exit</label>
 	      <right_justify>False</right_justify>
+	    </widget>
+	  </widget>
+	</widget>
+
+	<widget>
+	  <class>GtkMenuItem</class>
+	  <name>bookmark1</name>
+	  <label>Bookmark</label>
+	  <right_justify>False</right_justify>
+
+	  <widget>
+	    <class>GtkMenu</class>
+	    <name>bookmark1_menu</name>
+
+	    <widget>
+	      <class>GtkMenuItem</class>
+	      <name>new_bookmark</name>
+	      <accelerator>
+		<modifiers>GDK_MOD1_MASK</modifiers>
+		<key>GDK_N</key>
+		<signal>activate</signal>
+	      </accelerator>
+	      <signal>
+		<name>activate</name>
+		<handler>on_new_bookmark_activate</handler>
+		<last_modification_time>Wed, 31 May 2000 14:39:15 GMT</last_modification_time>
+	      </signal>
+	      <label>New Bookmark</label>
+	      <right_justify>False</right_justify>
+	    </widget>
+
+	    <widget>
+	      <class>GtkMenuItem</class>
+	      <name>new_folder</name>
+	      <signal>
+		<name>activate</name>
+		<handler>on_new_folder_activate</handler>
+		<last_modification_time>Wed, 31 May 2000 19:31:28 GMT</last_modification_time>
+	      </signal>
+	      <label>New Folder</label>
+	      <right_justify>False</right_justify>
+	    </widget>
+
+	    <widget>
+	      <class>GtkMenuItem</class>
+	      <name>delete</name>
+	      <accelerator>
+		<modifiers>0</modifiers>
+		<key>GDK_Delete</key>
+		<signal>activate</signal>
+	      </accelerator>
+	      <signal>
+		<name>activate</name>
+		<handler>on_bookmark_delete_activate</handler>
+		<last_modification_time>Wed, 31 May 2000 20:42:20 GMT</last_modification_time>
+	      </signal>
+	      <label>Delete</label>
+	      <right_justify>False</right_justify>
+	    </widget>
+
+	    <widget>
+	      <class>GtkMenuItem</class>
+	      <name>bookmark_properties</name>
+	      <accelerator>
+		<modifiers>GDK_MOD1_MASK</modifiers>
+		<key>GDK_Return</key>
+		<signal>activate</signal>
+	      </accelerator>
+	      <signal>
+		<name>activate</name>
+		<handler>on_bookmark_properties_activate</handler>
+		<last_modification_time>Wed, 31 May 2000 14:39:32 GMT</last_modification_time>
+	      </signal>
+	      <label>Properties</label>
+	      <right_justify>False</right_justify>
+	    </widget>
+	  </widget>
+	</widget>
+
+	<widget>
+	  <class>GtkMenuItem</class>
+	  <name>sort</name>
+	  <label>Sort</label>
+	  <right_justify>False</right_justify>
+
+	  <widget>
+	    <class>GtkMenu</class>
+	    <name>sort_menu</name>
+
+	    <widget>
+	      <class>GtkMenuItem</class>
+	      <name>sort_by</name>
+	      <label>Sort by</label>
+	      <right_justify>False</right_justify>
+
+	      <widget>
+		<class>GtkMenu</class>
+		<name>sort_by_menu</name>
+
+		<widget>
+		  <class>GtkMenuItem</class>
+		  <name>sort_by_title</name>
+		  <signal>
+		    <name>activate</name>
+		    <handler>on_sort_by_title_activate</handler>
+		    <last_modification_time>Wed, 31 May 2000 20:44:15 GMT</last_modification_time>
+		  </signal>
+		  <label>Title</label>
+		  <right_justify>False</right_justify>
+		</widget>
+
+		<widget>
+		  <class>GtkMenuItem</class>
+		  <name>sort_by_location</name>
+		  <signal>
+		    <name>activate</name>
+		    <handler>on_sort_by_location_activate</handler>
+		    <last_modification_time>Wed, 31 May 2000 20:44:17 GMT</last_modification_time>
+		  </signal>
+		  <label>Location</label>
+		  <right_justify>False</right_justify>
+		</widget>
+
+		<widget>
+		  <class>GtkMenuItem</class>
+		  <name>sort_by_created</name>
+		  <signal>
+		    <name>activate</name>
+		    <handler>on_sort_by_created_activate</handler>
+		    <last_modification_time>Wed, 31 May 2000 20:44:35 GMT</last_modification_time>
+		  </signal>
+		  <label>Created</label>
+		  <right_justify>False</right_justify>
+		</widget>
+
+		<widget>
+		  <class>GtkMenuItem</class>
+		  <name>sort_by_visited</name>
+		  <signal>
+		    <name>activate</name>
+		    <handler>on_sort_by_visited_activate</handler>
+		    <last_modification_time>Wed, 31 May 2000 20:44:43 GMT</last_modification_time>
+		  </signal>
+		  <label>Last Visited</label>
+		  <right_justify>False</right_justify>
+		</widget>
+	      </widget>
+	    </widget>
+
+	    <widget>
+	      <class>GtkCheckMenuItem</class>
+	      <name>auto_sort</name>
+	      <signal>
+		<name>activate</name>
+		<handler>on_auto_sort_activate</handler>
+		<last_modification_time>Wed, 31 May 2000 19:31:58 GMT</last_modification_time>
+	      </signal>
+	      <label>Auto Sort</label>
+	      <active>False</active>
+	      <always_show_toggle>False</always_show_toggle>
+	    </widget>
+
+	    <widget>
+	      <class>GtkMenuItem</class>
+	      <name>insert_new_items</name>
+	      <label>Insert new items</label>
+	      <right_justify>False</right_justify>
+
+	      <widget>
+		<class>GtkMenu</class>
+		<name>insert_new_items_menu</name>
+
+		<widget>
+		  <class>GtkRadioMenuItem</class>
+		  <name>insert_beginning</name>
+		  <signal>
+		    <name>activate</name>
+		    <handler>on_insert_beginning_activate</handler>
+		    <last_modification_time>Wed, 31 May 2000 19:33:01 GMT</last_modification_time>
+		  </signal>
+		  <label>Beginning of list</label>
+		  <active>False</active>
+		  <always_show_toggle>False</always_show_toggle>
+		  <group>new_items</group>
+		</widget>
+
+		<widget>
+		  <class>GtkRadioMenuItem</class>
+		  <name>insert_end</name>
+		  <signal>
+		    <name>activate</name>
+		    <handler>on_insert_end_activate</handler>
+		    <last_modification_time>Wed, 31 May 2000 19:33:01 GMT</last_modification_time>
+		  </signal>
+		  <label>End of list</label>
+		  <active>True</active>
+		  <always_show_toggle>False</always_show_toggle>
+		  <group>new_items</group>
+		</widget>
+	      </widget>
+	    </widget>
+
+	    <widget>
+	      <class>GtkMenuItem</class>
+	      <name>copy_items_to1</name>
+	      <label>Copy items to</label>
+	      <right_justify>False</right_justify>
+
+	      <widget>
+		<class>GtkMenu</class>
+		<name>copy_items_to1_menu</name>
+
+		<widget>
+		  <class>GtkRadioMenuItem</class>
+		  <name>copy_beginning</name>
+		  <signal>
+		    <name>activate</name>
+		    <handler>on_copy_beginning_activate</handler>
+		    <last_modification_time>Wed, 31 May 2000 19:33:50 GMT</last_modification_time>
+		  </signal>
+		  <label>Beginning of list</label>
+		  <active>False</active>
+		  <always_show_toggle>False</always_show_toggle>
+		  <group>copy_items</group>
+		</widget>
+
+		<widget>
+		  <class>GtkRadioMenuItem</class>
+		  <name>copy_end</name>
+		  <signal>
+		    <name>activate</name>
+		    <handler>on_copy_end_activate</handler>
+		    <last_modification_time>Wed, 31 May 2000 19:34:04 GMT</last_modification_time>
+		  </signal>
+		  <label>End of list</label>
+		  <active>True</active>
+		  <always_show_toggle>False</always_show_toggle>
+		  <group>copy_items</group>
+		</widget>
+	      </widget>
 	    </widget>
 	  </widget>
 	</widget>
@@ -255,11 +507,56 @@
 	  <shadow_type>GTK_SHADOW_IN</shadow_type>
 
 	  <widget>
-	    <class>GtkTree</class>
-	    <name>folder_tree</name>
-	    <selection_mode>GTK_SELECTION_SINGLE</selection_mode>
-	    <view_mode>GTK_TREE_VIEW_LINE</view_mode>
-	    <view_line>True</view_line>
+	    <class>GtkScrolledWindow</class>
+	    <name>scrolledwindow3</name>
+	    <hscrollbar_policy>GTK_POLICY_AUTOMATIC</hscrollbar_policy>
+	    <vscrollbar_policy>GTK_POLICY_AUTOMATIC</vscrollbar_policy>
+	    <hupdate_policy>GTK_UPDATE_CONTINUOUS</hupdate_policy>
+	    <vupdate_policy>GTK_UPDATE_CONTINUOUS</vupdate_policy>
+
+	    <widget>
+	      <class>GtkCTree</class>
+	      <name>ctree</name>
+	      <can_focus>True</can_focus>
+	      <signal>
+		<name>select_row</name>
+		<handler>on_folder_tree_select_row</handler>
+		<last_modification_time>Sat, 27 May 2000 16:23:56 GMT</last_modification_time>
+	      </signal>
+	      <signal>
+		<name>drag_motion</name>
+		<handler>on_folder_tree_drag_motion</handler>
+		<last_modification_time>Sat, 27 May 2000 16:24:01 GMT</last_modification_time>
+	      </signal>
+	      <signal>
+		<name>drag_leave</name>
+		<handler>on_folder_tree_drag_leave</handler>
+		<last_modification_time>Sat, 27 May 2000 16:24:06 GMT</last_modification_time>
+	      </signal>
+	      <signal>
+		<name>drag_data_received</name>
+		<handler>on_folder_tree_drag_data_received</handler>
+		<last_modification_time>Sat, 27 May 2000 16:24:11 GMT</last_modification_time>
+	      </signal>
+	      <columns>1</columns>
+	      <column_widths>80</column_widths>
+	      <selection_mode>GTK_SELECTION_BROWSE</selection_mode>
+	      <show_titles>False</show_titles>
+	      <shadow_type>GTK_SHADOW_IN</shadow_type>
+
+	      <widget>
+		<class>GtkLabel</class>
+		<child_name>CTree:title</child_name>
+		<name>label11</name>
+		<label>Folders</label>
+		<justify>GTK_JUSTIFY_CENTER</justify>
+		<wrap>False</wrap>
+		<xalign>0.5</xalign>
+		<yalign>0.5</yalign>
+		<xpad>0</xpad>
+		<ypad>0</ypad>
+	      </widget>
+	    </widget>
 	  </widget>
 	</widget>
       </widget>
@@ -280,8 +577,23 @@
 	  <class>GtkCList</class>
 	  <name>url_list</name>
 	  <can_focus>True</can_focus>
-	  <columns>4</columns>
-	  <column_widths>147,118,61,51</column_widths>
+	  <signal>
+	    <name>drag_data_get</name>
+	    <handler>on_url_list_drag_data_get</handler>
+	    <last_modification_time>Wed, 31 May 2000 14:06:27 GMT</last_modification_time>
+	  </signal>
+	  <signal>
+	    <name>drag_data_delete</name>
+	    <handler>on_url_list_drag_data_delete</handler>
+	    <last_modification_time>Wed, 31 May 2000 14:06:35 GMT</last_modification_time>
+	  </signal>
+	  <signal>
+	    <name>button_press_event</name>
+	    <handler>on_url_list_button_press_event</handler>
+	    <last_modification_time>Wed, 31 May 2000 15:32:58 GMT</last_modification_time>
+	  </signal>
+	  <columns>5</columns>
+	  <column_widths>9,136,132,57,47</column_widths>
 	  <selection_mode>GTK_SELECTION_SINGLE</selection_mode>
 	  <show_titles>True</show_titles>
 	  <shadow_type>GTK_SHADOW_IN</shadow_type>
@@ -289,7 +601,20 @@
 	  <widget>
 	    <class>GtkLabel</class>
 	    <child_name>CList:title</child_name>
-	    <name>label7</name>
+	    <name>label12</name>
+	    <label></label>
+	    <justify>GTK_JUSTIFY_CENTER</justify>
+	    <wrap>False</wrap>
+	    <xalign>0.5</xalign>
+	    <yalign>0.5</yalign>
+	    <xpad>0</xpad>
+	    <ypad>0</ypad>
+	  </widget>
+
+	  <widget>
+	    <class>GtkLabel</class>
+	    <child_name>CList:title</child_name>
+	    <name>label13</name>
 	    <label>Title</label>
 	    <justify>GTK_JUSTIFY_CENTER</justify>
 	    <wrap>False</wrap>
@@ -302,7 +627,7 @@
 	  <widget>
 	    <class>GtkLabel</class>
 	    <child_name>CList:title</child_name>
-	    <name>label8</name>
+	    <name>label14</name>
 	    <label>Location</label>
 	    <justify>GTK_JUSTIFY_CENTER</justify>
 	    <wrap>False</wrap>
@@ -315,8 +640,8 @@
 	  <widget>
 	    <class>GtkLabel</class>
 	    <child_name>CList:title</child_name>
-	    <name>label9</name>
-	    <label>Last Visited</label>
+	    <name>label15</name>
+	    <label>Created On</label>
 	    <justify>GTK_JUSTIFY_CENTER</justify>
 	    <wrap>False</wrap>
 	    <xalign>0.5</xalign>
@@ -328,8 +653,8 @@
 	  <widget>
 	    <class>GtkLabel</class>
 	    <child_name>CList:title</child_name>
-	    <name>label10</name>
-	    <label>Created On</label>
+	    <name>label16</name>
+	    <label>Last Visited</label>
 	    <justify>GTK_JUSTIFY_CENTER</justify>
 	    <wrap>False</wrap>
 	    <xalign>0.5</xalign>
@@ -484,7 +809,7 @@ Copyright(C) 2000 Paul Brannan
 URL: http://hubcap.clemson.edu/~pbranna/
 Email: pbranna@clemson.edu
 
-This program is released under the GNU public license.  This is free software, and you are welcome to redistribute it under the license conditions.  For details, please see the LICENSE file.</text>
+This program is released under the GNU general public license.  This is free software, and you are welcome to redistribute it under the license conditions.  For details, please see the LICENSE file.</text>
       </widget>
     </widget>
 
@@ -511,12 +836,340 @@ This program is released under the GNU public license.  This is free software, a
 	  <handler>on_about_ok</handler>
 	  <last_modification_time>Tue, 02 May 2000 21:48:43 GMT</last_modification_time>
 	</signal>
-	<label> OK </label>
+	<label>OK</label>
 	<child>
 	  <padding>0</padding>
 	  <expand>False</expand>
 	  <fill>False</fill>
 	</child>
+      </widget>
+    </widget>
+  </widget>
+</widget>
+
+<widget>
+  <class>GtkWindow</class>
+  <name>bookmark_dlg</name>
+  <visible>False</visible>
+  <title>Bookmark Properties</title>
+  <type>GTK_WINDOW_DIALOG</type>
+  <position>GTK_WIN_POS_NONE</position>
+  <modal>True</modal>
+  <allow_shrink>False</allow_shrink>
+  <allow_grow>True</allow_grow>
+  <auto_shrink>False</auto_shrink>
+
+  <widget>
+    <class>GtkVBox</class>
+    <name>vbox2</name>
+    <homogeneous>False</homogeneous>
+    <spacing>0</spacing>
+
+    <widget>
+      <class>GtkTable</class>
+      <name>table1</name>
+      <rows>5</rows>
+      <columns>2</columns>
+      <homogeneous>False</homogeneous>
+      <row_spacing>0</row_spacing>
+      <column_spacing>0</column_spacing>
+      <child>
+	<padding>0</padding>
+	<expand>False</expand>
+	<fill>True</fill>
+      </child>
+
+      <widget>
+	<class>GtkLabel</class>
+	<name>label17</name>
+	<label>Title</label>
+	<justify>GTK_JUSTIFY_CENTER</justify>
+	<wrap>False</wrap>
+	<xalign>0.5</xalign>
+	<yalign>0.5</yalign>
+	<xpad>0</xpad>
+	<ypad>0</ypad>
+	<child>
+	  <left_attach>0</left_attach>
+	  <right_attach>1</right_attach>
+	  <top_attach>0</top_attach>
+	  <bottom_attach>1</bottom_attach>
+	  <xpad>0</xpad>
+	  <ypad>0</ypad>
+	  <xexpand>False</xexpand>
+	  <yexpand>False</yexpand>
+	  <xshrink>False</xshrink>
+	  <yshrink>False</yshrink>
+	  <xfill>False</xfill>
+	  <yfill>False</yfill>
+	</child>
+      </widget>
+
+      <widget>
+	<class>GtkLabel</class>
+	<name>label18</name>
+	<label>Location</label>
+	<justify>GTK_JUSTIFY_CENTER</justify>
+	<wrap>False</wrap>
+	<xalign>0.5</xalign>
+	<yalign>0.5</yalign>
+	<xpad>0</xpad>
+	<ypad>0</ypad>
+	<child>
+	  <left_attach>0</left_attach>
+	  <right_attach>1</right_attach>
+	  <top_attach>1</top_attach>
+	  <bottom_attach>2</bottom_attach>
+	  <xpad>0</xpad>
+	  <ypad>0</ypad>
+	  <xexpand>False</xexpand>
+	  <yexpand>False</yexpand>
+	  <xshrink>False</xshrink>
+	  <yshrink>False</yshrink>
+	  <xfill>False</xfill>
+	  <yfill>False</yfill>
+	</child>
+      </widget>
+
+      <widget>
+	<class>GtkLabel</class>
+	<name>label19</name>
+	<label>Created On</label>
+	<justify>GTK_JUSTIFY_CENTER</justify>
+	<wrap>False</wrap>
+	<xalign>0.5</xalign>
+	<yalign>0.5</yalign>
+	<xpad>0</xpad>
+	<ypad>0</ypad>
+	<child>
+	  <left_attach>0</left_attach>
+	  <right_attach>1</right_attach>
+	  <top_attach>2</top_attach>
+	  <bottom_attach>3</bottom_attach>
+	  <xpad>0</xpad>
+	  <ypad>0</ypad>
+	  <xexpand>False</xexpand>
+	  <yexpand>False</yexpand>
+	  <xshrink>False</xshrink>
+	  <yshrink>False</yshrink>
+	  <xfill>False</xfill>
+	  <yfill>False</yfill>
+	</child>
+      </widget>
+
+      <widget>
+	<class>GtkLabel</class>
+	<name>label20</name>
+	<label>Last Visited</label>
+	<justify>GTK_JUSTIFY_CENTER</justify>
+	<wrap>False</wrap>
+	<xalign>0.5</xalign>
+	<yalign>0.5</yalign>
+	<xpad>0</xpad>
+	<ypad>0</ypad>
+	<child>
+	  <left_attach>0</left_attach>
+	  <right_attach>1</right_attach>
+	  <top_attach>3</top_attach>
+	  <bottom_attach>4</bottom_attach>
+	  <xpad>0</xpad>
+	  <ypad>0</ypad>
+	  <xexpand>False</xexpand>
+	  <yexpand>False</yexpand>
+	  <xshrink>False</xshrink>
+	  <yshrink>False</yshrink>
+	  <xfill>False</xfill>
+	  <yfill>False</yfill>
+	</child>
+      </widget>
+
+      <widget>
+	<class>GtkLabel</class>
+	<name>label21</name>
+	<label>Last Modified</label>
+	<justify>GTK_JUSTIFY_CENTER</justify>
+	<wrap>False</wrap>
+	<xalign>0.5</xalign>
+	<yalign>0.5</yalign>
+	<xpad>0</xpad>
+	<ypad>0</ypad>
+	<child>
+	  <left_attach>0</left_attach>
+	  <right_attach>1</right_attach>
+	  <top_attach>4</top_attach>
+	  <bottom_attach>5</bottom_attach>
+	  <xpad>0</xpad>
+	  <ypad>0</ypad>
+	  <xexpand>False</xexpand>
+	  <yexpand>False</yexpand>
+	  <xshrink>False</xshrink>
+	  <yshrink>False</yshrink>
+	  <xfill>False</xfill>
+	  <yfill>False</yfill>
+	</child>
+      </widget>
+
+      <widget>
+	<class>GtkEntry</class>
+	<name>bookmark_title_entry</name>
+	<can_focus>True</can_focus>
+	<editable>True</editable>
+	<text_visible>True</text_visible>
+	<text_max_length>0</text_max_length>
+	<text></text>
+	<child>
+	  <left_attach>1</left_attach>
+	  <right_attach>2</right_attach>
+	  <top_attach>0</top_attach>
+	  <bottom_attach>1</bottom_attach>
+	  <xpad>0</xpad>
+	  <ypad>0</ypad>
+	  <xexpand>True</xexpand>
+	  <yexpand>False</yexpand>
+	  <xshrink>False</xshrink>
+	  <yshrink>False</yshrink>
+	  <xfill>True</xfill>
+	  <yfill>False</yfill>
+	</child>
+      </widget>
+
+      <widget>
+	<class>GtkEntry</class>
+	<name>bookmark_location_entry</name>
+	<can_focus>True</can_focus>
+	<editable>True</editable>
+	<text_visible>True</text_visible>
+	<text_max_length>0</text_max_length>
+	<text></text>
+	<child>
+	  <left_attach>1</left_attach>
+	  <right_attach>2</right_attach>
+	  <top_attach>1</top_attach>
+	  <bottom_attach>2</bottom_attach>
+	  <xpad>0</xpad>
+	  <ypad>0</ypad>
+	  <xexpand>True</xexpand>
+	  <yexpand>False</yexpand>
+	  <xshrink>False</xshrink>
+	  <yshrink>False</yshrink>
+	  <xfill>True</xfill>
+	  <yfill>False</yfill>
+	</child>
+      </widget>
+
+      <widget>
+	<class>GtkEntry</class>
+	<name>bookmark_created_entry</name>
+	<can_focus>True</can_focus>
+	<editable>True</editable>
+	<text_visible>True</text_visible>
+	<text_max_length>0</text_max_length>
+	<text></text>
+	<child>
+	  <left_attach>1</left_attach>
+	  <right_attach>2</right_attach>
+	  <top_attach>2</top_attach>
+	  <bottom_attach>3</bottom_attach>
+	  <xpad>0</xpad>
+	  <ypad>0</ypad>
+	  <xexpand>True</xexpand>
+	  <yexpand>False</yexpand>
+	  <xshrink>False</xshrink>
+	  <yshrink>False</yshrink>
+	  <xfill>True</xfill>
+	  <yfill>False</yfill>
+	</child>
+      </widget>
+
+      <widget>
+	<class>GtkEntry</class>
+	<name>bookmark_visited_entry</name>
+	<can_focus>True</can_focus>
+	<editable>True</editable>
+	<text_visible>True</text_visible>
+	<text_max_length>0</text_max_length>
+	<text></text>
+	<child>
+	  <left_attach>1</left_attach>
+	  <right_attach>2</right_attach>
+	  <top_attach>3</top_attach>
+	  <bottom_attach>4</bottom_attach>
+	  <xpad>0</xpad>
+	  <ypad>0</ypad>
+	  <xexpand>True</xexpand>
+	  <yexpand>False</yexpand>
+	  <xshrink>False</xshrink>
+	  <yshrink>False</yshrink>
+	  <xfill>True</xfill>
+	  <yfill>False</yfill>
+	</child>
+      </widget>
+
+      <widget>
+	<class>GtkEntry</class>
+	<name>bookmark_modified_entry</name>
+	<can_focus>True</can_focus>
+	<editable>True</editable>
+	<text_visible>True</text_visible>
+	<text_max_length>0</text_max_length>
+	<text></text>
+	<child>
+	  <left_attach>1</left_attach>
+	  <right_attach>2</right_attach>
+	  <top_attach>4</top_attach>
+	  <bottom_attach>5</bottom_attach>
+	  <xpad>0</xpad>
+	  <ypad>0</ypad>
+	  <xexpand>True</xexpand>
+	  <yexpand>False</yexpand>
+	  <xshrink>False</xshrink>
+	  <yshrink>False</yshrink>
+	  <xfill>True</xfill>
+	  <yfill>False</yfill>
+	</child>
+      </widget>
+    </widget>
+
+    <widget>
+      <class>GtkHButtonBox</class>
+      <name>hbuttonbox1</name>
+      <layout_style>GTK_BUTTONBOX_END</layout_style>
+      <spacing>30</spacing>
+      <child_min_width>85</child_min_width>
+      <child_min_height>27</child_min_height>
+      <child_ipad_x>7</child_ipad_x>
+      <child_ipad_y>0</child_ipad_y>
+      <child>
+	<padding>0</padding>
+	<expand>True</expand>
+	<fill>True</fill>
+      </child>
+
+      <widget>
+	<class>GtkButton</class>
+	<name>bookmark_properties_ok</name>
+	<can_default>True</can_default>
+	<has_default>True</has_default>
+	<can_focus>True</can_focus>
+	<signal>
+	  <name>clicked</name>
+	  <handler>on_bookmark_properties_ok_clicked</handler>
+	  <last_modification_time>Wed, 31 May 2000 14:47:03 GMT</last_modification_time>
+	</signal>
+	<label>OK</label>
+      </widget>
+
+      <widget>
+	<class>GtkButton</class>
+	<name>bookmark_properties_cancel</name>
+	<can_default>True</can_default>
+	<can_focus>True</can_focus>
+	<signal>
+	  <name>clicked</name>
+	  <handler>on_bookmark_properties_cancel_clicked</handler>
+	  <last_modification_time>Wed, 31 May 2000 14:47:09 GMT</last_modification_time>
+	</signal>
+	<label>Cancel</label>
       </widget>
     </widget>
   </widget>

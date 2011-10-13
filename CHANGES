@@ -1,0 +1,26 @@
+Change Log for the GTK Bookmark Editor
+Please use a tab size of 4 to read this file
+
+0.08	Support for separators added
+		Bookmark properties, addition, and deletion added
+		Folder properties, addition, and deletion added
+		Menu items added for sorting
+
+0.07	File saving completed
+		Moving of bookmarks between folders implemented
+		Moving of folders implemented
+
+0.06	Rudimentary file saving added
+
+0.05	Copying of bookmarks between folders implemented
+
+0.04	Drag and drop support added for the CTree
+
+0.03	Switched to using a CTree instead of a regular tree
+		Drag and drop support lost
+
+0.02	Drag and drop support
+
+0.01	Initial version
+		Interface created with glade
+		Bookmark loading implemented
